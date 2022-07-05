@@ -1,0 +1,71 @@
+version: "3.8"
+services:
+  nginx:
+    container_name: nginx
+    image: nginx:alpine
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: ./nginx.conf
+        target: /etc/nginx/nginx.conf
+    networks:
+      - houses-net
+    depends_on:
+      - front-end
+  mysql:
+    container_name: mysql
+    #image: asads/house-make-db:latest
+    build: ./Service1 - DB
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: housesdb
+    volumes:
+      - type: volume
+        source: houses-vol
+        target: /var/lib/mysql
+    networks:
+      - houses-net
+  front-end:
+    #container_name: front-end
+    #image: asads/service2 - fe:latest
+    build: ./Service2 - FE
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+    networks:
+      - houses-net
+    depends_on:
+      - mysql
+      - location
+      - size
+      - price
+  location:
+    #container_name: houselocation
+    #image: asads/service3 - loc:latest
+    build: ./Service3 - Loc
+    deploy:
+      #replicas: 3
+    networks:
+      - houses-net
+  housesize:
+    #container_name: housesize
+    #image: asads/service4 - size:latest
+    build: ./Service4 - Size
+    deploy:
+      #replicas: 3
+    networks:
+      - houses-net
+  houseprice:
+    #container_name: houseprice
+    #image: asads/service5 - price:latest
+    build: ./Service5 - Price
+    deploy:
+      #replicas: 3
+    networks:
+      - houses-net
+volumes:
+  houses-vol:
+networks:
+  houses-net:
