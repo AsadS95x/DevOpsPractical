@@ -8,5 +8,5 @@ class Houses(db.Model):
     house_price = db.Column(db.Integer)
     date_generated = db.Column(db.DateTime)
     def __str__(self):
-        return f"{self.house_name}: {self.house_location} with {self.house_size} bedrooms, would cost around {self.house_price}"
+        return f"{self.house_location}: with {self.house_size} bedrooms, would cost around £{self.house_price}"
         
