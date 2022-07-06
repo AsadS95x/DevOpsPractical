@@ -5,4 +5,4 @@ import random
 @app.route('/get_size', methods=['GET'])
 def size():
     house_size = random.randrange(1,7)
-    return Response(house_size, mimetype='text/plain')
+    return Response(str(house_size), mimetype='text/plain')

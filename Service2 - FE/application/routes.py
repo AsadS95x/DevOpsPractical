@@ -7,11 +7,17 @@ from datetime import date
 
 @app.route('/', methods = ['GET'])
 def home():
-    house_location = requests.get('http://houselocation:5000/get_location')
-    house_size = requests.get('http://housesize/get_size')
-    price = requests.post('http://housepirce:5000/get_price', json = {"Location": size.text, "Size": size.Integer})
-    house = Events(house_location = house_location.text, house_size = house_size.Integer, price = price.Integer, date_generated = date.today())
+    house_location = requests.get('http://houselocation:5000/get_location').text
+    house_size = requests.get('http://housesize:5000/get_size').text
+    print(" MY Output Lines:")
+    print(house_location)
+    print(house_size)
+
+    price = requests.post('http://houseprice:5000/get_price', json = {"Location": house_location, "Size": house_size}).text
+    print(price)
+    
+    house = Houses(house_location = house_location, house_size = int(house_size), house_price = int(price), date_generated = date.today())
     db.session.add(house)
     db.session.commit()
     #past5 = Events.query.order_by(Events.id.desc()).limit(5).all()
-    return render_template('index.html', house = house''' , past5 = past5''')
+    return render_template('index.html', house = house)

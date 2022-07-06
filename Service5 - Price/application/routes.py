@@ -6,10 +6,13 @@ def price():
     house_data = request.get_json()
     house_location = house_data["Location"]
     house_size = house_data["Size"]
-    size_cost = {1: 100000}
-    if house_size >1:
-        np=house_size*size_cost
+    #house_size= int(hs)
+    print ("house_size: "+ str(house_size))
+    #print(" Why is this not showing..... "+ hs)
+    size_cost = {"1": 100000}
+    if int(house_size) >1:
+        np=int(house_size)*size_cost["1"]
         size_cost.update({house_size: np}) 
     location_cost = {"Beverly Hills": 3, "Vegas Strip": 2, "Mayfair": 6,"Bay Area": 5, "Paris": 3, "Barcelona": 1}
-    price = {location_cost[house_location]}*{size_cost[house_size]}
-    return Response(price, mimetype='text/plain')
+    price = location_cost[house_location]*size_cost[house_size]
+    return Response(str(price), mimetype='text/plain')

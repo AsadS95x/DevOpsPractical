@@ -29,7 +29,7 @@ services:
     networks:
       - houses-net
   front-end:
-    #container_name: front-end
+    container_name: front-end
     #image: asads/service2 - fe:latest
     build: ./Service2 - FE
     environment:
@@ -42,23 +42,23 @@ services:
       - size
       - price
   location:
-    #container_name: houselocation
+    container_name: houselocation
     #image: asads/service3 - loc:latest
     build: ./Service3 - Loc
     deploy:
       #replicas: 3
     networks:
       - houses-net
-  housesize:
-    #container_name: housesize
+  size:
+    container_name: housesize
     #image: asads/service4 - size:latest
     build: ./Service4 - Size
     deploy:
       #replicas: 3
     networks:
       - houses-net
-  houseprice:
-    #container_name: houseprice
+  price:
+    container_name: houseprice
     #image: asads/service5 - price:latest
     build: ./Service5 - Price
     deploy:
