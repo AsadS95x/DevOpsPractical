@@ -6,9 +6,7 @@ def price():
     house_data = request.get_json()
     house_location = house_data["Location"]
     house_size = house_data["Size"]
-    #house_size= int(hs)
     print ("house_size: "+ str(house_size))
-    #print(" Why is this not showing..... "+ hs)
     size_cost = {"1": 100000}
     if int(house_size) >1:
         np=int(house_size)*size_cost["1"]
