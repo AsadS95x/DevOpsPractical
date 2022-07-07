@@ -17,7 +17,7 @@ services:
       - front-end
   mysql:
     container_name: mysql
-    #image: asads/house-make-db:latest
+    image: asads95x/house-make-db:v1
     build: ./Service1 - DB
     environment:
       MYSQL_ROOT_PASSWORD: secret
@@ -30,7 +30,7 @@ services:
       - houses-net
   front-end:
     container_name: front-end
-    #image: asads/service2 - fe:latest
+    image: asads95x/service2-fe:v1
     build: ./Service2-FE
     environment:
       MYSQL_ROOT_PASSWORD: secret
@@ -43,7 +43,7 @@ services:
       - price
   location:
     container_name: houselocation
-    #image: asads/service3 - loc:latest
+    image: asads95x/service3-loc:v1
     build: ./Service3-Loc
     deploy:
       #replicas: 3
@@ -51,7 +51,7 @@ services:
       - houses-net
   size:
     container_name: housesize
-    #image: asads/service4 - size:latest
+    image: asads95x/service4-size:v1
     build: ./Service4-Size
     deploy:
       #replicas: 3
@@ -59,7 +59,7 @@ services:
       - houses-net
   price:
     container_name: houseprice
-    #image: asads/service5 - price:latest
+    image: asads95x/service5-price:v1
     build: ./Service5-Price
     deploy:
       #replicas: 3
