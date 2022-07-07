@@ -31,7 +31,7 @@ services:
   front-end:
     container_name: front-end
     #image: asads/service2 - fe:latest
-    build: ./Service2 - FE
+    build: ./Service2-FE
     environment:
       MYSQL_ROOT_PASSWORD: secret
     networks:
@@ -44,7 +44,7 @@ services:
   location:
     container_name: houselocation
     #image: asads/service3 - loc:latest
-    build: ./Service3 - Loc
+    build: ./Service3-Loc
     deploy:
       #replicas: 3
     networks:
@@ -52,7 +52,7 @@ services:
   size:
     container_name: housesize
     #image: asads/service4 - size:latest
-    build: ./Service4 - Size
+    build: ./Service4-Size
     deploy:
       #replicas: 3
     networks:
@@ -60,7 +60,7 @@ services:
   price:
     container_name: houseprice
     #image: asads/service5 - price:latest
-    build: ./Service5 - Price
+    build: ./Service5-Price
     deploy:
       #replicas: 3
     networks:
