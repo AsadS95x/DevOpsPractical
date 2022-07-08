@@ -1,6 +1,6 @@
 from flask_testing import TestCase
 from flask import url_for
-from requests_mock import mock
+import requests_mock
 from application import app
 
 
