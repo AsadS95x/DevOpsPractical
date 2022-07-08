@@ -18,6 +18,8 @@ def home():
     
     house = Houses(house_location = house_location, house_size = int(house_size), house_price = int(price), date_generated = date.today())
     db.session.add(house)
+     print("Added to DB")
     db.session.commit()
+    print("Committed to DB")
     #past5 = Events.query.order_by(Events.id.desc()).limit(5).all()
     return render_template('index.html', house = house)
