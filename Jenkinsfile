@@ -11,7 +11,7 @@ pipeline {
 
         stage('Make Space-Remove existing images'){
             steps {
-                sh "bash scripts/dependacnies.sh"
+                sh "bash scripts/dependancies.sh"
                 sh 'docker system prune --all --volumes --force'
                 
             }
