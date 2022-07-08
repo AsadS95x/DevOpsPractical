@@ -22,4 +22,4 @@ class TestResponse(TestBase):
 
 
         self.assert200(response)
-        self.assertIn("Beverly Hills: with 5 bedrooms, would cost around £325000", response.data.decode())   house_location = requests.get('http://houselocation:5000/get_location').text
+        self.assertIn("Beverly Hills: with 5 bedrooms, would cost around £325000", response.data.decode())
