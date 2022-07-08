@@ -16,7 +16,7 @@ pipeline {
             }
             steps {
                 sh "bash scripts/dependancies.sh"
-                sh "docker login --username $DOCKER_UNAME --password $DOCKER_PWORD"
+                sh "docker login --username $DOCKER_UNAME --password-stdin $DOCKER_PWORD"
                 sh 'docker system prune --all --volumes --force'
                 sh "bash scripts/containers.sh"
             }
