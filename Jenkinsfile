@@ -17,11 +17,7 @@ pipeline {
                 sh "docker-compose push"
             }
         }
-        '''
-        stage('Deploy') {
-            steps {
-            }
-        }'''
+
     }
    
 }
