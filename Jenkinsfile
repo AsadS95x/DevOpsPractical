@@ -15,9 +15,9 @@ pipeline {
             }
             steps {
 
-                sh "docker-compose build --parallel"
+                sh "docker compose build --parallel"
                 sh "docker login --username $DOCKER_UNAME --password $DOCKER_PWORD"
-                sh "docker-compose push"
+                sh "docker compose push"
             }
         }
         stage('Run Ansible'){
