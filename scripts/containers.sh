@@ -1,1 +1,1 @@
-docker-compose build --parallel && docker-compose push
+docker compose build --parallel && docker compose push
