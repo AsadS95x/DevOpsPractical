@@ -35,7 +35,7 @@ Users should be able to select the house Hocations and size of House they are lo
 
 I am trying out Jira as the service/tool for my project management for this project. Jira is similar to trello and is a good way to track a projects progress, keep track of tasks within a team, as well upload documents and keep commentary of challenges/issues.
 
-!image.png
+**See Jira Image in Images Folder**
 
 
 ## Database Entity Diagram
@@ -44,19 +44,30 @@ Image needs to be created.
 
 ## Risk assessment
 
-Still needs to be made created.
+Still needs to be made.
 
 
 ## Overall Service Architecture
 
+The plan was to use all the services, however i am yet to include a swarm or ansible succesfully in the project. However the next steps would be to include these, and quite possibly to use ansible to create the docker swarm.  The rest of the services follow this route up to the deployment phase. Credits to Earl Gray for the grpahic. 
+
+**See Service Architecture and pipeline in Images Folder**
+
 ## Pipeline
+
+Pipeline was primarly done through Jenkins by making a pipeline project. There is a script called jenkinsfile which contains the order and instructions that jenkins follows for its pipeline. The jenkins images shows a succesfuly completed build via this pipeline. Jenkins also webhooks any updates from the github repo for live updates and new builds.
 
 ## Example Service Progress
 
+See Image Service Structure & Python of Service2
+
 ## Testing
 
+
+
 ## The future
--Develop the application further utilising full CRUD to allow the user to choose what house type they want to generate the price for. As well as displaying DB history. Fancier development of webpage html rather than basic output. 
+Immediate next steps would be Swarm depoyment through ansible.
+Further Development of the application would be utilising full CRUD to allow the user to choose what house type they want to generate the price for. As well as displaying DB history. And Fancier development of webpage html rather than basic output. 
 
 Acknowledgements:
 All trainers at QA. Leon, Adam and Earl for support for this project.
