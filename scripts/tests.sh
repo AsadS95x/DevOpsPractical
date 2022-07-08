@@ -2,7 +2,7 @@
 #!/bin/bash
 
 sudo apt-get update
-sudo apt-get install -y curl jq python3-.10-venv
+sudo apt-get install python3-.10-venv pip3
 
 declare -a dirs=(Service2-FE Service3-Loc Service4-Size Service5-Price)
 
