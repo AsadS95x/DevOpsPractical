@@ -9,21 +9,15 @@ pipeline {
             }
         }
 
-        stage('Make Space-Remove existing images'){
-            steps {
-                sh "bash scripts/dependancies.sh"
-                sh 'docker system prune --all --volumes --force'
-                
-            }
-        }
-
         stage('Build and push containers') {
             environment {
                 DOCKER_UNAME = credentials('docker_uname')
                 DOCKER_PWORD = credentials('docker_pword')
             }
             steps {
+                sh "bash scripts/dependancies.sh"
                 sh "docker login --username $DOCKER_UNAME --password $DOCKER_PWORD"
+                sh 'docker system prune --all --volumes --force'
                 sh "bash scripts/containers.sh"
             }
         }
