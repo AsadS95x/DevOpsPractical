@@ -1,13 +1,14 @@
 # DevOpsPractical
-QA Devops Practical Project
+### Header 1 QA Devops Practical Project
 
 First Commit  
 
-Project Brief:
+### Header 3 Project Brief:
 
 This is a simple Dev Ops project to show the linking of microservices and automation between them. 
 
-Project Technolgies; Aim to be used and Included
+### Header 3Project Technolgies;
+### Header 5 Aim to be used and Included
 Jira  for Kanban Boards and Project Management
 Git for Version Control
 Jenkins for Continuous Intregation
@@ -17,7 +18,7 @@ Docker for Containerisation and Swarm Orchestration
 NGINX for Reverse Proxy 
 
 
-App Focus
+### Header 3 App Focus
 
 Housing Prices Monitor for those looking at buying a home. 
 Users should be able to select the house Hocations and size of House they are looking for and be able to get rough prices based on those factors.
@@ -29,33 +30,33 @@ Service4 - House Size
 Service5 - House Prices Estimate
 
 
-Project Management
-Planning, and Design:
+### Header 3 Project Management
+### Header 4 Planning, and Design:
 
-Jira 
+### Header 3 Jira 
 
 I am trying out trello as the service/tool for my project management for this project. Jira is similar to trello and is a good way to track a projects progress, keep track of tasks within a team, as well upload documents and keep commentary of challenges/issues.
 image.png
 
-Database Entity Diagram
+### Header 3 Database Entity Diagram
 
 Image needs to be created.
 
-Risk assessment
+### Header 3 Risk assessment
 
 Still needs to be made created.
 
 
-Overall Service Architecture
+### Header 3 Overall Service Architecture
 
-Pipeline
+### Header 3 Pipeline
 
-Example Service Progress
+### Header 3 Example Service Progress
 
-Testing
+### Header 3 Testing
 
-The future
--Develop the application further utilising full CRUD to allow the user to choose what weapon type they want to generate. -Further exploration of the technologies to ensure zero
+### Header 3 The future
+-Develop the application further utilising full CRUD to allow the user to choose what house type they want to generate the price for. As well as displaying DB history. Fancier development of webpage html rather than basic output. 
 
 Acknowledgements:
 All trainers at QA. Leon, Adam and Earl for support for this project.
