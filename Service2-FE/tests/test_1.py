@@ -18,5 +18,6 @@ class TestResponse(TestBase):
             m.get('http://houselocation:5000/get_location', text='Beverly Hills')
             m.post('http://houseprice:5000/get_price', text='325000')
             response = self.client.get(url_for('home'))
+            print (response)
             self.assert200(response)
             self.assertIn("Beverly Hills: with 5 bedrooms, would cost around £325000", response.data.decode())
