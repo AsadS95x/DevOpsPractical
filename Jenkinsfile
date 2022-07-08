@@ -30,8 +30,8 @@ pipeline {
 //            }
 //        }
 
-        stage('Deploy')options {
-        timeout(time: 3, unit: 'MINUTES') }{
+        stage('Deploy') {options {
+        timeout(time: 3, unit: 'MINUTES') }
             steps{
                 sh "docker-compose up"
             }
