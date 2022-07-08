@@ -12,6 +12,8 @@ pipeline {
             steps {
                 sh 'docker system prune --all --volumes --force'
             }
+        }
+
         stage('Build and push containers') {
             environment {
                 DOCKER_UNAME = credentials('docker_uname')
@@ -22,16 +24,18 @@ pipeline {
                 sh "bash scripts/containers.sh"
             }
         }
+
         stage('Run Ansible'){
             steps{
                 sh "bash scripts/ansible.sh"
             }
         }
+        
         stage('Deploy'){
             steps{
                 sh "docker-compose up"
             }
-    }
+        }
     }
    
 }
