@@ -7,15 +7,15 @@ First Commit
 
 This is a simple Dev Ops project to show the linking of microservices and automation between them. 
 
-## Header 3Project Technolgies;
+## Project Technolgies;
 ##### Aim to be used and Included
-Jira  for Kanban Boards and Project Management
-Git for Version Control
-Jenkins for Continuous Intregation
-Ansible for configuration management/automation
-GCP as cloud platfrom to host services
-Docker for Containerisation and Swarm Orchestration
-NGINX for Reverse Proxy 
+*Jira  for Kanban Boards and Project Management
+*Git for Version Control
+*Jenkins for Continuous Intregation
+*Ansible for configuration management/automation
+*GCP as cloud platfrom to host services
+*Docker for Containerisation and Swarm Orchestration
+*NGINX for Reverse Proxy 
 
 
 ## App Focus
@@ -23,20 +23,20 @@ NGINX for Reverse Proxy
 Housing Prices Monitor for those looking at buying a home. 
 Users should be able to select the house Hocations and size of House they are looking for and be able to get rough prices based on those factors.
 
-Service1 - Database 
-Service2 - FrontEnd
-Service3 - Houses Locations
-Service4 - House Size
-Service5 - House Prices Estimate
+*Service1 - Database 
+*Service2 - FrontEnd
+*Service3 - Houses Locations
+*Service4 - House Size
+*Service5 - House Prices Estimate
 
 
 ## Project Management
-#### Planning, and Design:
+#### Planning, and Design: Jira 
 
-## Jira 
+I am trying out Jira as the service/tool for my project management for this project. Jira is similar to trello and is a good way to track a projects progress, keep track of tasks within a team, as well upload documents and keep commentary of challenges/issues.
 
-I am trying out trello as the service/tool for my project management for this project. Jira is similar to trello and is a good way to track a projects progress, keep track of tasks within a team, as well upload documents and keep commentary of challenges/issues.
-image.png
+!image.png
+
 
 ## Database Entity Diagram
 
