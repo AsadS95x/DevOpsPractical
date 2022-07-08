@@ -14,7 +14,7 @@ pipeline {
                 DOCKER_PWORD = credentials('docker_pword')
             }
             steps {
-                sh "docker login -u $DOCKER_UNAME -p $DOCKER_PWORD"
+                sh "docker login --username $$DOCKER_UNAME --password $DOCKER_PWORD"
                 sh "docker-compose build --parallel"
                 sh "docker-compose push"
             }
