@@ -12,7 +12,7 @@ class TestBase(TestCase):
 class TestViews(TestBase):
 
     def test_get_size(self):
-       with patch('random.randrange(1,7)') as r:
+       with mock('random.randrange(1,7)') as r:
            r.return_value = 5
            response = self.client.get(url_for('size'))
            self.assertEqual(response.status_code, 200)
