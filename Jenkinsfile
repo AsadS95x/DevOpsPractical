@@ -19,7 +19,7 @@ pipeline {
                 DOCKER_PWORD = credentials('docker_pword')
             }
             steps {
-                sh "docker login --username $DOCKER_UNAME --password-stdin $DOCKER_PWORD"
+                sh "docker login --username $DOCKER_UNAME --password $DOCKER_PWORD"
                 sh "bash scripts/containers.sh"
             }
         }
