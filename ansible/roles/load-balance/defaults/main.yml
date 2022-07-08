@@ -1,0 +1,19 @@
+---
+# defaults file for load-balance
+
+events {}
+http {
+        upstream pool {
+                least_conn;
+                server swarm-manager:80;
+                server swarm-worker:80;
+        }
+        server {
+                location / {
+                        proxy_pass http://pool;
+                }
+        }
+}
+Footer
+© 2022 GitHub, Inc.
+Footer navigation

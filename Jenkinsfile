@@ -8,6 +8,10 @@ pipeline {
                 sh "bash scripts/tests.sh"
             }
         }
+        stage('Make Space-Remove existing images'){
+            steps {
+                sh 'docker system prune --all --volumes --force'
+            }
         stage('Build and push containers') {
             environment {
                 DOCKER_UNAME = credentials('docker_uname')
