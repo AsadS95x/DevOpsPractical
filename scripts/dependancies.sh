@@ -1,3 +1,9 @@
+
+
+sudo apt update
+sudo apt install python3 python3-pip python3-venv -y
+
+
 if [ -z "$(docker --version 2> /dev/null)" ]; then
     curl https://get.docker.com | sudo bash
     sudo usermod -aG docker $USER

@@ -1,10 +1,14 @@
 pipeline {
     agent any
     stages {
+        stage('Install Dependancies') {
+            steps {
+                sh "bash scripts/dependancies.sh"
+            }
+        }
+
         stage('Run unit tests') {
             steps {
-                sh 'sudo apt update'
-                sh 'sudo apt install python3 python3-pip python3-venv -y'
                 sh "bash scripts/tests.sh"
             }
         }
@@ -15,9 +19,7 @@ pipeline {
                 DOCKER_PWORD = credentials('docker_pword')
             }
             steps {
-                sh "bash scripts/dependancies.sh"
                 sh "docker login --username $DOCKER_UNAME --password-stdin $DOCKER_PWORD"
-                sh 'docker system prune --all --volumes --force'
                 sh "bash scripts/containers.sh"
             }
         }
