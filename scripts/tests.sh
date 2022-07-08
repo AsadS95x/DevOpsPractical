@@ -2,7 +2,8 @@
 #!/bin/bash
 
 sudo apt-get update
-sudo apt install python3.10-venv
+sudo apt-get install virtualenv
+sudo apt install python3-pip
 
 declare -a dirs=(Service2-FE Service3-Loc Service4-Size Service5-Price)
 
