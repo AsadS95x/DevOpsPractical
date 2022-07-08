@@ -14,10 +14,8 @@ pipeline {
                 DOCKER_PWORD = credentials('docker_pword')
             }
             steps {
-
-                sh "docker compose build --parallel"
                 sh "docker login --username $DOCKER_UNAME --password $DOCKER_PWORD"
-                sh "docker compose push"
+                sh "bash scripts/containers.sh"
             }
         }
         stage('Run Ansible'){
