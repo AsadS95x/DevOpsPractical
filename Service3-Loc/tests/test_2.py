@@ -13,7 +13,7 @@ class TestViews(TestBase):
 
     def test_get_size(self):
        with patch('random.choice') as r:
-           r.return_value = "Mayfair""
+           r.return_value = "Mayfair"
            response = self.client.get(url_for('location'))
            self.assertEqual(response.status_code, 200)
            self.assertIn(b'Mayfair', response.data)
