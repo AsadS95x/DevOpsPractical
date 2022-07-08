@@ -18,7 +18,7 @@ class TestResponse(TestBase):
             m.get('http://houselocation:5000/get_location', text='Beverly Hills')
             m.post('http://houseprice:5000/get_price', text='325000')
 
-            response = self.client.get(url_for('index'))
+            response = self.client.get(url_for('home'))
 
 
         self.assert200(response)
