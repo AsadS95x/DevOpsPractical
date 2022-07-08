@@ -8,9 +8,12 @@ pipeline {
                 sh "bash scripts/tests.sh"
             }
         }
+
         stage('Make Space-Remove existing images'){
             steps {
+                sh "bash scripts/dependacnies.sh"
                 sh 'docker system prune --all --volumes --force'
+                
             }
         }
 
@@ -30,7 +33,7 @@ pipeline {
                 sh "bash scripts/ansible.sh"
             }
         }
-        
+
         stage('Deploy'){
             steps{
                 sh "docker-compose up"
