@@ -1,6 +1,9 @@
 #!/bin/bash
 #!/bin/bash
 
+sudo apt-get update
+sudo apt-get install -y curl jq python3-dev libpq-dev software-properties-common
+
 declare -a dirs=(Service2-FE Service3-Loc Service4-Size Service5-Price)
 
 for dir in ${dirs[@]}; do
