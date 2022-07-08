@@ -9,17 +9,15 @@ from datetime import date
 def home():
     house_location = requests.get('http://houselocation:5000/get_location').text
     house_size = requests.get('http://housesize:5000/get_size').text
-    print(" MY Output Lines:")
-    print(house_location)
-    print(house_size)
-
     price = requests.post('http://houseprice:5000/get_price', json = {"Location": house_location, "Size": house_size}).text
-    print(price)
-    
+    #print(" MY Output Lines:")
+    #print(house_location)
+    #print(house_size)
+    #print(price)
     house = Houses(house_location = house_location, house_size = int(house_size), house_price = int(price), date_generated = date.today())
     db.session.add(house)
-    print("Added to DB")
+    #print("Added to DB")
     db.session.commit()
-    print("Committed to DB")
+    #print("Committed to DB")
     #past5 = Events.query.order_by(Events.id.desc()).limit(5).all()
     return render_template('index.html', house = house)
