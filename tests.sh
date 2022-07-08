@@ -12,3 +12,5 @@ for dir in ${dirs[@]}; do
     deactivate
     cd ..
 done
+
+#lordhelpme
