@@ -24,11 +24,11 @@ pipeline {
             }
         }
 
-        stage('Run Ansible'){
-            steps{
-                sh "bash scripts/ansible.sh"
-            }
-        }
+//        stage('Run Ansible'){
+//            steps{
+//               sh "bash scripts/ansible.sh"
+//            }
+//        }
 
         stage('Deploy'){
             steps{
