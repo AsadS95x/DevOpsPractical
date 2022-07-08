@@ -7,7 +7,7 @@ for dir in ${dirs[@]}; do
     sudo python3 -m venv venv
     source venv/bin/activate
     pip3 install -r requirements.txt
-    python3 -m pytest '''--cov=application --cov-report=html'''
+    python3 -m pytest --cov=. --cov-report xml -v
     deactivate
     cd ..
 done
